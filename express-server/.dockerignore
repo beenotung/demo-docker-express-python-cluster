@@ -1,0 +1,13 @@
+# npm files
+node_modules/
+pnpm-lock.yaml
+
+# config files
+.env
+
+# built files
+*.js
+tsconfig.tsbuildinfo
+
+# docker
+Dockerfile

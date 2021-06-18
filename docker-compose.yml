@@ -1,0 +1,26 @@
+version: '3'
+
+services: 
+    express-server:
+      env_file: ./express-server/.env
+      environment: 
+        PORT: 8100
+      build: 
+        context: ./express-server
+      image: cluster-server
+      expose: 
+        - 8100
+      ports: 
+        - "8100:8100"
+
+    python-worker:
+      depends_on: 
+        - express-server
+      environment: 
+        MAIN_HOST: express-server
+        MAIN_PORT: 8100
+      build: 
+        context: ./python-worker
+      image: cluster-worker
+      deploy:
+        replicas: 3

@@ -1,0 +1,15 @@
+{
+  "name": "python-worker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "install": "pip install -r requirements.txt",
+    "dev": "MAIN_HOST=localhost MAIN_PORT=8100 nodemon worker.py"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
